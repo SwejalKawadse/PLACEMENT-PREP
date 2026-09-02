@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/PLACEMENT PREPARATION/STL",
-      "program": "c:/PLACEMENT PREPARATION/STL/build/Debug/outDebug",
+      "cwd": "c:/PLACEMENT PREPARATION/DSA/4_BASIC RECURSION",
+      "program": "c:/PLACEMENT PREPARATION/DSA/4_BASIC RECURSION/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
