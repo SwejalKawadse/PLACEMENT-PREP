@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> twoSum(vector<int>& nums, int target) {
+        int n=nums.size();
+        vector<int> ans(2,-1);
+    
+        // remaining , index
+        map<int,int> mpp;
+        for(int i=0;i<n;i++){
+            int rem=target-nums[i];
+            if(mpp.find(rem)!=mpp.end()){
+                ans[0]=mpp[rem];
+                ans[1]=i;
+                return ans;
+            }
+            mpp[nums[i]]=i;
+        }
+     return ans;
+    }
+
+
+int main() {
+
+
+    // array 1
+    int n;
+    cout<<"Enter size : "<<endl;
+    cin>>n;
+    cout<<"Enter the elements of the array 1: "<<endl;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    vector<int> nums;
+    cout<<endl<<"Array is : "<<endl;
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+        nums.push_back(arr[i]);
+    }
+    cout<<endl;
+
+   int target;
+   cout<<"Enter the target value : "<<endl;
+   cin>>target;
+   cout<<"The indxes two sum of the given target is : "<<endl;
+   vector<int> ans;
+   ans=twoSum(nums,target);
+   cout<<"{";
+   for(auto it:ans){
+    cout<<it<<" ";
+   }
+   cout<<"}"<<endl;
+
+return 0;
+}

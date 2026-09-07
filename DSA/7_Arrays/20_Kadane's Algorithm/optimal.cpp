@@ -1,26 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int LongestSubarrayWithSumK(vector<int> &nums,int k){
+int maxSubArray(vector<int>& nums) {
         int n=nums.size();
-        int ans=0;
         long long sum=0;
-        map<long long,int> mpp;
+        long long ans=LLONG_MIN;
+
         for(int i=0;i<n;i++){
             sum+=nums[i];
-            if(sum==k){
-                ans=max(ans,i+1);
+            ans=max(ans,sum);
+            if(sum<0){
+                sum=0;
             }
-                   int rem=sum-k;
-                   if(mpp.find(rem)!=mpp.end()){
-                    ans=max(ans,i-mpp[rem]);
-                   }
-                   if(mpp.find(sum)==mpp.end()){
-                   mpp[sum]=i;
-                   }
         }
         return ans;
-}
+    }
+
 
 int main() {
 
@@ -42,11 +37,8 @@ int main() {
     }
     cout<<endl;
 
-    int x;
-    cout<<"Enter the sum of the subarray : "<<endl;
-    cin>>x;
+   cout<<"The maximum subarray sum is : "<<maxSubArray(nums);
 
-    cout<<"Longest subarray with sum k is of length : "<<LongestSubarrayWithSumK(nums,x);
-
+   
 return 0;
 }
